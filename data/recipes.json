@@ -1,0 +1,67 @@
+{
+    "recipes": [
+        {
+            "name": "Emergency Beacon",
+            "made": [
+                "Character"
+            ],
+            "inputs": [
+                {
+                    "name": "Xenoferrite Plates",
+                    "quantity": 2
+                },
+                {
+                    "name": "Electronic Components",
+                    "quantity": 5
+                }
+            ],
+            "quantity": 1
+        },
+        {
+            "name": "Mining Drill",
+            "made": [
+                "Character"
+            ],
+            "inputs": [
+                {
+                    "name": "Xenoferrite Plates",
+                    "quantity": 2
+                },
+                {
+                    "name": "Electronic Components",
+                    "quantity": 25
+                },
+                {
+                    "name": "Technum Rods",
+                    "quantity": 25
+                }
+            ],
+            "quantity": 1
+        },
+        {
+            "name": "Mining Laser",
+            "made": [
+                "Character"
+            ],
+            "inputs": [
+                {
+                    "name": "Steel Beams",
+                    "quantity": 2
+                },
+                {
+                    "name": "Advanced Machinery Parts",
+                    "quantity": 15
+                },
+                {
+                    "name": "Energy Cell Components",
+                    "quantity": 15
+                },
+                {
+                    "name": "Electronic Components",
+                    "quantity": 25
+                }
+            ],
+            "quantity": 1
+        }
+]
+}

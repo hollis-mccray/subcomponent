@@ -2,9 +2,6 @@
     "recipes": [
         {
             "name": "Emergency Beacon",
-            "made": [
-                "Character"
-            ],
             "inputs": [
                 {
                     "name": "Xenoferrite Plates",
@@ -15,13 +12,18 @@
                     "quantity": 5
                 }
             ],
-            "quantity": 1
+            "outputs": [
+                {
+                    "name": "Emergency Beacon",
+                    "quantity": 1
+                }
+            ],
+            "made": [
+                "Character"
+            ]
         },
         {
             "name": "Mining Drill",
-            "made": [
-                "Character"
-            ],
             "inputs": [
                 {
                     "name": "Xenoferrite Plates",
@@ -36,13 +38,18 @@
                     "quantity": 25
                 }
             ],
-            "quantity": 1
+            "outputs": [
+                {
+                    "name": "Mining Drill",
+                    "quantity": 1
+                }
+            ],
+            "made": [
+                "Character"
+            ]
         },
         {
             "name": "Mining Laser",
-            "made": [
-                "Character"
-            ],
             "inputs": [
                 {
                     "name": "Steel Beams",
@@ -53,15 +60,23 @@
                     "quantity": 15
                 },
                 {
-                    "name": "Energy Cell Components",
+                    "name": "Energy Cells",
                     "quantity": 15
                 },
                 {
                     "name": "Electronic Components",
-                    "quantity": 25
+                    "quantity": 15
                 }
             ],
-            "quantity": 1
+            "outputs": [
+                {
+                    "name": "Mining Laser",
+                    "quantity": 1
+                }
+            ],
+            "made": [
+                "Character"
+            ]
         }
-]
+    ]
 }

@@ -1,4 +1,4 @@
-from sources import options
+from data import *
 
 def menu():
     options = {
@@ -18,6 +18,7 @@ def menu():
 
 
 def main():
+    item_data = item_list()
     option = menu()
     while option != "X":
         match option:

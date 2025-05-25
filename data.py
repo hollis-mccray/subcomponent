@@ -1,23 +1,17 @@
 class ItemList():
     def __init__(self):
-        self._item_items = {}
+        self._base = []
+        self._recipes = {}
         self.load()
 
     def load(self):
         with open("data/items.json") as infile:
             json_data = infile.read()
-            item_data = json.loads(json_data)
-            for item_data in recipes["items"]:
-                item = Item.fromJSON(item_data)
-                self._item_list[item.name] = item
+            game_data = json.loads(json_data)
 
     def save(self):
-        item_data = [recipe.toJSON() for (name, recipe) in self._recipe_list.items()]
-        data = {
-            "items": item_data
-        }
-        with open("data/items.json", "w") as outfile:
-            outfile.write(json.dumps(data,indent=4))
+        pass
+
 
 class Item():
     def __init__(self):

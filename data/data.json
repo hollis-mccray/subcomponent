@@ -1,82 +1,15 @@
 {
+    "base": [
+        "Cobalt Ingot",
+        "Gold Ingot",
+        "Magnesium Powder",
+        "Nickel Ingot",
+        "Platinum Ingot",
+        "Silicon Wafer",
+        "Silver Ingot",
+        "Gravel",
+        "Prototech Scrap"
+    ],
     "recipes": [
-        {
-            "name": "Emergency Beacon",
-            "inputs": [
-                {
-                    "name": "Xenoferrite Plates",
-                    "quantity": 2
-                },
-                {
-                    "name": "Electronic Components",
-                    "quantity": 5
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "Emergency Beacon",
-                    "quantity": 1
-                }
-            ],
-            "made": [
-                "Character"
-            ]
-        },
-        {
-            "name": "Mining Drill",
-            "inputs": [
-                {
-                    "name": "Xenoferrite Plates",
-                    "quantity": 2
-                },
-                {
-                    "name": "Electronic Components",
-                    "quantity": 25
-                },
-                {
-                    "name": "Technum Rods",
-                    "quantity": 25
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "Mining Drill",
-                    "quantity": 1
-                }
-            ],
-            "made": [
-                "Character"
-            ]
-        },
-        {
-            "name": "Mining Laser",
-            "inputs": [
-                {
-                    "name": "Steel Beams",
-                    "quantity": 2
-                },
-                {
-                    "name": "Advanced Machinery Parts",
-                    "quantity": 15
-                },
-                {
-                    "name": "Energy Cells",
-                    "quantity": 15
-                },
-                {
-                    "name": "Electronic Components",
-                    "quantity": 15
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "Mining Laser",
-                    "quantity": 1
-                }
-            ],
-            "made": [
-                "Character"
-            ]
-        }
     ]
 }

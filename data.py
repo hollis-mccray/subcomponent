@@ -1,7 +1,7 @@
 class ItemList():
     def __init__(self):
         self._base = []
-        self._recipes = {}
+        self._items = {}
         self.load()
 
     def load(self):
@@ -9,42 +9,50 @@ class ItemList():
             json_data = infile.read()
             game_data = json.loads(json_data)
 
+            # Base items are stored as strings in an array
+            for item in game_data["base"]:
+                self._base.append(item)
+            
+            # Items that are crafted use the Item class
+            for item_data in game_data["items"]:
+                new_item = Item.fromJSON(item_data)
+                self._items[new_item.name] = new_item
+
     def save(self):
-        pass
+        game_data = [game.toJSON() for game in self.games]
+        data = {
+            "base": self._base,
+            "items": [item.toJSON() for item in self._items.values],
+        }
+        with open("data/data.json", "w") as outfile:
+            outfile.write(json.dumps(data,indent=4))
 
 
 class Item():
     def __init__(self):
         self.name = ""
-        self.base = False
-        self.recipes = []
+        self.components = {}
+        self.quantity = 0
     
-    def fromJSON(data):
+    def fromJSON(data) -> Item:
         new_item = Item()
-        if "name" in data:
-            new_item = data["name"]
-        if "base" in data:
-            new.base = data["base"]
-        for recipe_data in data["recipes"]:
-            recipe = Recipe.fromJSON(recipe_data)
-            new_item.recipes.append(recipe)
+        new_item.name = data["name"]
+        for component in data["components"]:
+            components[component["name"]] = component["quantity"]
+        new_item.name = data["quantity"]
         return new_item
 
-
     def toJSON(self):
-        return self.name
+        data = {
+            "name": self.name,
+            "components": list(),
+            "quantity": self.quantity,
+        }
 
-class recipe():
-    def __init__(self):
-        self.inputs = {}
-        self.made = []
-        self.quantity = 0
-
-    def fromJSON(recipe_data):
-        new_recipe = Recipe()
-        for (input, quantity) in recipe_data["inputs"]:
-            new_recipe.inputs[input] = quantity
-        for source in recipe_data["made"]:
-            new_recipe.made.append(source)
-        new_recipe.quantity = recipe_data["quantity"]
-        return new_recipe
+        for key, value in self.components.items():
+            comp_data = {
+                "name": key,
+                "quantity": value,
+            }
+            data["components"].add(comp_data)
+        return data

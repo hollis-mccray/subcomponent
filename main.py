@@ -2,13 +2,15 @@ from data import *
 
 def menu():
     options = {
-        "A": "Add Recipe",
+        "B": "Base Item",
+        "R": "Recipes",
+        "S": "Shopping List",
         "E": "Error Report",
         "X": "Exit"
     }
     choice = '?'
     while choice not in options:
-        print("Foundry Subcomponent Manager")
+        print("Subcomponent Problem Managers")
         print()
         for key, value in options.items():
             print(f"{key}. {value}")
@@ -22,10 +24,14 @@ def main():
     option = menu()
     while option != "X":
         match option:
-            case "A":
-                print("\nAdding Recipe...\n")
+            case "B":
+                print("\nBase Items..\n")
+            case "R":
+                print("\nRecipes...\n")
+            case "S":
+                print("\nShopping List...\n")
             case "E":
-                print("\nPrinting Error Report...\n")
+                print("\nError Report...\n")
         option = menu()
 
 main()

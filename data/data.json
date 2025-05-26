@@ -10,6 +10,16 @@
         "Gravel",
         "Prototech Scrap"
     ],
-    "recipes": [
+    "items": [
+        {
+            "name": "Bulletproof Glass",
+            "components": [
+                {
+                    "name": "Silicon Wafer",
+                    "quantity": 15.00
+                }
+            ],
+            "quantity": 1
+        }
     ]
 }

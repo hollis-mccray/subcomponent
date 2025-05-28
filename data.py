@@ -7,7 +7,7 @@ class ItemList():
 
     def load(self):
         with open("data/data.json") as infile:
-            json_data = infile.read()s
+            json_data = infile.read()
             game_data = json.loads(json_data)
             
             # Items are defined using the Item Class

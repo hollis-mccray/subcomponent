@@ -1,16 +1,17 @@
 from data import *
+from item_management import itemManager
 
 def menu():
     options = {
-        "B": "Base Item",
-        "R": "Recipes",
+        "I": "Items",
         "S": "Shopping List",
         "E": "Error Report",
         "X": "Exit"
     }
     choice = '?'
     while choice not in options:
-        print("Subcomponent Problem Managers")
+        print()
+        print("Subcomponent Problem Helper")
         print()
         for key, value in options.items():
             print(f"{key}. {value}")
@@ -20,14 +21,12 @@ def menu():
 
 
 def main():
-    item_data = item_list()
+    item_data = ItemList()
     option = menu()
     while option != "X":
         match option:
-            case "B":
-                print("\nBase Items..\n")
-            case "R":
-                print("\nRecipes...\n")
+            case "I":
+                itemManager(item_data)
             case "S":
                 print("\nShopping List...\n")
             case "E":

@@ -1,58 +1,76 @@
+import json
+
 class ItemList():
     def __init__(self):
-        self._base = []
         self._items = {}
         self.load()
 
     def load(self):
-        with open("data/items.json") as infile:
-            json_data = infile.read()
+        with open("data/data.json") as infile:
+            json_data = infile.read()s
             game_data = json.loads(json_data)
-
-            # Base items are stored as strings in an array
-            for item in game_data["base"]:
-                self._base.append(item)
             
-            # Items that are crafted use the Item class
+            # Items are defined using the Item Class
             for item_data in game_data["items"]:
                 new_item = Item.fromJSON(item_data)
                 self._items[new_item.name] = new_item
 
     def save(self):
-        game_data = [game.toJSON() for game in self.games]
         data = {
-            "base": self._base,
             "items": [item.toJSON() for item in self._items.values],
         }
         with open("data/data.json", "w") as outfile:
             outfile.write(json.dumps(data,indent=4))
+    
+    def addItem(self, newItem):
+        self._items[newItem.name] = newItem
+        self.save()
+    
+    def getItem(self, itemName):
+        if itemName in self._items.keys():
+            return self._items[itemName]
+        else:
+            return None
+
 
 
 class Item():
     def __init__(self):
         self.name = ""
+        self.base = False
         self.components = {}
-        self.quantity = 0
+
+        #Arbitrary default value
+        self.quantity = 1
     
-    def fromJSON(data) -> Item:
+    def fromJSON(data):
         new_item = Item()
         new_item.name = data["name"]
-        for component in data["components"]:
-            components[component["name"]] = component["quantity"]
-        new_item.name = data["quantity"]
+        if "base" in data:
+            new_item.base= data["base"]
+        if "components" in data:
+            for component in data["components"]:
+                new_item.components[component["name"]] = component["quantity"]
+        if "quantity" in data:
+            new_item.quantity = data["quantity"]
+            
         return new_item
 
     def toJSON(self):
         data = {
             "name": self.name,
+            "base": self.base,
             "components": list(),
             "quantity": self.quantity,
         }
 
-        for key, value in self.components.items():
-            comp_data = {
-                "name": key,
-                "quantity": value,
-            }
-            data["components"].add(comp_data)
+        if not self.base:
+            for key, value in self.components.items():
+                comp_data = {
+                    "name": key,
+                    "quantity": value,
+                }
+                data["components"].add(comp_data)
+        else:
+            data["base"] = True
         return data

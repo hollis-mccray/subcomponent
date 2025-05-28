@@ -1,16 +1,45 @@
 {
-    "base": [
-        "Cobalt Ingot",
-        "Gold Ingot",
-        "Magnesium Powder",
-        "Nickel Ingot",
-        "Platinum Ingot",
-        "Silicon Wafer",
-        "Silver Ingot",
-        "Gravel",
-        "Prototech Scrap"
-    ],
     "items": [
+        {
+            "name": "Cobalt Ingot",
+            "base": true,
+            "quantity": 1
+        },
+        {
+            "name": "Gold Ingot",
+            "base": true,
+            "quantity": 1
+        },
+        {
+            "name": "Magnesium Powder",
+            "base": true,
+            "quantity": 1
+        },
+        {
+            "name": "Platinum Ingot",
+            "base": true,
+            "quantity": 1
+        },
+        {
+            "name": "Silicon Wafer",
+            "base": true,
+            "quantity": 1
+        },
+        {
+            "name": "Silver Ingot",
+            "base": true,
+            "quantity": 1
+        },
+        {
+            "name": "Gravel",
+            "base": true,
+            "quantity": 1
+        },
+        {
+            "name": "Prototech Scrap",
+            "base": true,
+            "quantity": 1
+        },
         {
             "name": "Bulletproof Glass",
             "components": [

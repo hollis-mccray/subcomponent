@@ -9,3 +9,7 @@ Well, not quite. There are two types of items in The Subcomponent Problem.
 **Base items** are fundamental items. These either are harvested or have crafting requirements that are simple enough not track, i.e. raw ore.
 
 **Recipes** are crafted from base items. They have a list of ingredients that may either be raw items or other crafted items as well as a quantity crafted (defaults to 1).
+
+## 🤝 Contributing
+
+Currently this project is in early stages. Comments are welcome.
